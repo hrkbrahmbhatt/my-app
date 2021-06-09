@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import SignIn from './Pages/SignIn';
+import SignUp from './Pages/SignUp';
 
 export default function App() {
   return (
@@ -16,10 +18,13 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/users">Users</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/signIn">Login</Link>
+            </li>
+            <li>
+              <Link to="/signUp">Sign Up</Link>
             </li>
           </ul>
         </nav>
@@ -27,8 +32,11 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/signIn">
+            <SignIn/>
+          </Route>
+          <Route path="/signUp">
+            <SignUp />
           </Route>
           <Route path="/users">
             <Users />
@@ -44,10 +52,6 @@ export default function App() {
 
 function Home() {
   return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
 }
 
 function Users() {
