@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from './Pages/Navbar';
+import Navbar from './Component/Navbar';
 import { LinkContainer } from "react-router-bootstrap";
 
 import {
@@ -8,8 +8,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import SignIn from './Pages/SignIn';
-import SignUp from './Pages/SignUp';
+import SignIn from './Component/SignIn';
+import SignUp from './Component/SignUp';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       <LinkContainer to="/signUp">
         <Navbar.Link>signUp</Navbar.Link>
         </LinkContainer>
-        <LinkContainer to="/signIp">
+        <LinkContainer to="/signIn">
         <Navbar.Link>signIn</Navbar.Link>
         </LinkContainer>
         </li>
@@ -35,10 +35,8 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/signIn">
-            <SignIn/>
           </Route>
           <Route path="/signUp">
-            <SignUp />
           </Route>
           <Route path="/users">
             <Users />
