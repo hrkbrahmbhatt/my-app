@@ -1,4 +1,7 @@
 import React from "react";
+import Navbar from './Pages/Navbar';
+import { LinkContainer } from "react-router-bootstrap";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,27 +11,26 @@ import {
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
 
-export default function App() {
+
+function App() {
   return (
     <Router>
       <div>
-        <nav>
+      <Navbar><nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-            <li>
-              <Link to="/signIn">Login</Link>
-            </li>
-            <li>
-              <Link to="/signUp">Sign Up</Link>
-            </li>
+      <LinkContainer to="/signUp">
+        <Navbar.Link>signUp</Navbar.Link>
+        </LinkContainer>
+        <LinkContainer to="/signIp">
+        <Navbar.Link>signIn</Navbar.Link>
+        </LinkContainer>
+        </li>
           </ul>
         </nav>
-
+        </Navbar>
+       
+        
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -41,19 +43,20 @@ export default function App() {
           <Route path="/users">
             <Users />
           </Route>
-          <Route path="/">
+          {/* <Route path="/">
             <Home />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
+// function Home() {
+//   return <h2>Home</h2>;
+// }
 
 function Users() {
   return <h2>Users</h2>;
 }
+export default App;
