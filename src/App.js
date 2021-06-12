@@ -19,12 +19,12 @@ function App() {
       <Navbar><nav>
           <ul>
             <li>
-      <LinkContainer to="/signUp">
+      {/* <LinkContainer to="/signUp">
         <Navbar.Link>signUp</Navbar.Link>
         </LinkContainer>
         <LinkContainer to="/signIn">
         <Navbar.Link>signIn</Navbar.Link>
-        </LinkContainer>
+        </LinkContainer> */}
         </li>
           </ul>
         </nav>

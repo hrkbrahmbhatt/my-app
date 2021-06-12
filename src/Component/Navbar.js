@@ -8,7 +8,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SignUpModalDialog from './SignUpModalDialog';
 import SignInModalDialog from './SignInModalDialog';
 import { Link } from "react-router-dom";
-import { useHistory } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 const useStyles = makeStyles(theme => ({
 	menuButton: {
@@ -23,7 +22,6 @@ const Navbar = () => {
 	const classes = useStyles();
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  const { push } = useHistory()
 	// const handleOpen = () => {
 	// 	setOpenSignIn(true);
 	// 	setOpenSignUp(true);
@@ -41,20 +39,19 @@ const Navbar = () => {
 					edge="start"
 					color="inherit"
 					aria-label="menu"
-					className={classes.menuButton}
-				>
+					className={classes.menuButton}>
 					<MenuIcon />
 				</IconButton>
 				<Typography variant="h6" className={classes.title}>
 					Home
 				</Typography>
 				<Link to="/signIn">
-                <Button type="Button" className="signIn" color="inherit" onClick={() => setOpenSignIn(true)}>
+                <Button type="Button" className="signIn" onClick={() => setOpenSignIn(true)}>
 					Sign In
 				</Button>
 			</Link>
 			<Link to="/signUp">
-				<Button type ="Button" className="signUp"color="inherit" onClick={() => setOpenSignUp(true)}>
+				<Button type ="Button" className="signUp" onClick={() => setOpenSignUp(true)}>
 					Sign Up
 				</Button>
 				</Link>
