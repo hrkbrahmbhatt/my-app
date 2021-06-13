@@ -2,9 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { useForm, Controller } from 'react-hook-form';
-import { Button } from 'semantic-ui-react'
+import Button  from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-
+import { useHistory} from "react-router-dom";
 const useStyles = makeStyles(theme => ({
 	root: {
 		display: 'flex',
@@ -23,10 +23,16 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-const SignUpForm = ({ handleClose }) => {
+const SignUpForm = () => {
 	const classes = useStyles();
 	const { handleSubmit, control } = useForm();
 
+	let history = useHistory();
+
+	const onCancel = () =>{
+		history.push("/");
+		
+	};
 	const onSubmit = data => {
 		console.log(data);
 	};
@@ -100,12 +106,11 @@ const SignUpForm = ({ handleClose }) => {
 				rules={{ required: 'Password required' }}
 			/>
 			<div>
-            <Link to="/">
-				<Button variant="contained" onClick={handleClose}>
-					Cancel
+            
+				<Button variant="contained" onClick={onCancel}>
+					Back
 				</Button>
-                </Link>
-				<Button type="submit" variant="contained" color="primary">
+            	<Button type="submit" variant="contained" color="primary">
 					Signup
 				</Button>
 			</div>

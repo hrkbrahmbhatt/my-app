@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from './Component/Navbar';
-import { LinkContainer } from "react-router-bootstrap";
 
 import {
   BrowserRouter as Router,
@@ -15,28 +14,20 @@ import SignUp from './Component/SignUp';
 function App() {
   return (
     <Router>
-      <div>
-      <Navbar><nav>
-          <ul>
-            <li>
-      {/* <LinkContainer to="/signUp">
-        <Navbar.Link>signUp</Navbar.Link>
-        </LinkContainer>
-        <LinkContainer to="/signIn">
-        <Navbar.Link>signIn</Navbar.Link>
-        </LinkContainer> */}
-        </li>
-          </ul>
-        </nav>
-        </Navbar>
-       
+      
+      <Navbar/> 
         
+
+
+
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/signIn">
+            <SignIn/>
           </Route>
           <Route path="/signUp">
+          <SignUp/>
           </Route>
           <Route path="/users">
             <Users />
@@ -45,7 +36,7 @@ function App() {
             <Home />
           </Route> */}
         </Switch>
-      </div>
+    
     </Router>
   );
 }

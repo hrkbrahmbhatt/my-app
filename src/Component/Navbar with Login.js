@@ -32,7 +32,7 @@ const Navbar = () => {
 	return (
 		<AppBar position="static">
 			<Toolbar>
-				{/* <IconButton
+				<IconButton
 					edge="start"
 					color="inherit"
 					aria-label="menu"
@@ -41,7 +41,7 @@ const Navbar = () => {
 				</IconButton>
 				<Typography variant="h6" className={classes.title}>
 					Home
-				</Typography> */}
+				</Typography>
 			    <Button type="Button" className="signIn" onClick={handleSignIn}>
 					Sign In
 				</Button>
